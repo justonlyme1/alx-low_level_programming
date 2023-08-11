@@ -1,2 +1,2 @@
 #!/bin/bash
-CFILE="$CFILE"; BASENAME=$(basename "$CFILE" .c); gcc -S -masm=intel -o "$BASENAME.s" "$CFILE";
+gcc -S -masm=intel $CFILE -o `echo $CFILE | cut -d. -f1`.s

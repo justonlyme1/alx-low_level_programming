@@ -1,25 +1,28 @@
 #include "main.h"
 
 /**
- * _strspn - Gets the length of a prefix substring.
- * @s: String to search.
- * @accept: String containing characters to search for.
- * Return: Number of bytes in the initial segment of s consisting only of bytes from accept.
+ * _strspn - gets the length of a prefix substring.
+ * @s: initial segment.
+ * @accept: accepted bytes.
+ * Return: the number of accepted bytes.
  */
 unsigned int _strspn(char *s, char *accept)
 {
-    unsigned int count = 0;  // Initialize count to 0
+	unsigned int i, j, bool;
 
-    // Iterate through each character in 's'
-    while (*s != '\0') {
-        // Check if the current character is present in 'accept'
-        if (_strchr(accept, *s) != NULL) {
-            count++;  // Increment the count if character is found in 'accept'
-        } else {
-            break;  // Exit the loop if a character not in 'accept' is encountered
-        }
-        s++;  // Move to the next character in 's'
-    }
-
-    return count;  // Return the count of characters from 'accept' found in the initial segment of 's'
+	for (i = 0; *(s + i) != '\0'; i++)
+	{
+		bool = 1;
+		for (j = 0; *(accept + j) != '\0'; j++)
+		{
+			if (*(s + i) == *(accept + j))
+			{
+				bool = 0;
+				break;
+			}
+		}
+		if (bool == 1)
+			break;
+	}
+	return (i);
 }

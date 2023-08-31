@@ -1,0 +1,1 @@
+Recursion shows how obident and tolarate a computer is it do one same task to fhe very end it is program to stopno matter how little or huge the task becomes ,Recursion can be harmful when not use right
